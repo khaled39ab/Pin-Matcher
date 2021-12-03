@@ -52,32 +52,32 @@ input[type='text']:focus {
 }
 
 .calc-typed {
-margin-top: 20px;
-font-size: 45px;
-text-align: right;
-color: #fff;
+    margin-top: 20px;
+    font-size: 45px;
+    text-align: right;
+    color: #fff;
 }
 
 .calc-button-row {
-width: 100%;
+    width: 100%;    
 }
 
 .button {
-width: 20%;
-background: #425062;
-color: #fff;
-padding: 20px 0;
-margin: 5px;
-display: inline-block;
-font-size: 25px;
-text-align: center;
-vertical-align: middle;
-margin-right: -4px;
-border-radius: 10px;
-cursor: pointer;
+    width: 20%;
+    background: #425062;
+    color: #fff;
+    padding: 20px 0;
+    margin: 5px;
+    display: inline-block;
+    font-size: 25px;
+    text-align: center;
+    vertical-align: middle;
+    margin-right: -4px;
+    border-radius: 10px;
+    cursor: pointer;
 }
 .blink-me {
-color: #E0B612;
+    color: #E0B612;
 }
 .submit-btn {
     border: none;
@@ -88,19 +88,28 @@ color: #E0B612;
     color: #fff;
 }
 .notify {
-    color: #fff;
+    color: black;
     text-align: center;
     margin: 0 auto;
     background: #222436;
     margin-top: 20px;
     border-radius: 15px;
     padding: 5px 20px;
+    display: none;
+    position: absolute;
+    background-color: #fff;
 }
 .notify-section{
     width: 35%;
     margin: 0 auto;
+    
 }
 .action-left {
     color: #FF3C5F;
     margin-top: 10px;
+}
+#retry-btn{
+    color: red;
+    text-decoration: underline;
+    cursor: pointer;
 }
