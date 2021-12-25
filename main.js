@@ -69,6 +69,14 @@ function verifyPin() {
     }
     else {
         submitLeft = submitLeft - 1;
+        if (submitLeft < 1) {
+            const notMatched = document.getElementById('notMatched');
+            notMatched.style.display = 'block';
+            document.getElementById('font-page').style.display = 'none';
+            document.getElementById('notMatched').innerText = "❌ No More Chance. You Are Blocked ❌"
+        }
+        else {
+        
         const notMatched = document.getElementById('notMatched');
         notMatched.style.display = 'block';
         document.getElementById('font-page').style.display = 'none';
@@ -79,6 +87,7 @@ function verifyPin() {
         // pin.value = '';
         // const typedPin= document.getElementById ('typed-pin');
         // typedPin.value = '';
+        }
     }
 };
 document.getElementById('submitBtn').addEventListener('click', function () {
@@ -93,10 +102,6 @@ document.getElementById('retry-btn').addEventListener('click', function () {
 
 function retry() {
 
-    if (submitLeft < 1) {
-        document.getElementById('notMatched').innerText = "❌ No More Chance. You Are Blocked ❌"
-    }
-    else {
         const secondTry = document.getElementById('font-page');
         secondTry.style.display = 'flex';
         document.getElementById('notMatched').style.display = 'none';
@@ -106,6 +111,5 @@ function retry() {
         typedPin.value = '';
 
         document.querySelector('.action-left').innerText = `${submitLeft} try left`;
-    }
 
 };
