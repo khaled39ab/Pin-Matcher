@@ -1,13 +1,17 @@
 function getPin() {
     const randomNumber = Math.random() * 100000;
+    console.log(randomNumber);
     const pin = (randomNumber + '').split('.')[0];
     if (pin.length === 5) {
         return pin;
     }
     else {
-        console.log('Not' + pin);
+        console.log('Not valid ' + pin);
         return getPin();
     }
+    // const randomNum = Math.ceil (randomNumber);
+    // console.log(randomNum);
+    // return randomNum;
 };
 
 //display generated pin
@@ -62,8 +66,15 @@ function verifyPin(){
         }
         else{
             const notMatched = document.getElementById ('notMatched');
-            notMatched.style.display = 'block';
-            document.getElementById ('font-page').style.display = 'none';
+            // notMatched.style.display = 'block';
+            // document.getElementById ('font-page').style.display = 'none';
+
+            //By using Alert 
+            alert("Didn't match. Try again");
+            const pin = document.getElementById('pin');
+            pin.value = '';
+            const typedPin= document.getElementById ('typed-pin');
+            typedPin.value = '';
         }
     }
 };
@@ -73,11 +84,16 @@ document.getElementById ('submitBtn').addEventListener ('click', function (){
 
 //Retry event
 document.getElementById ('retry-btn').addEventListener ('click', function(){
+    retry();
+});
+
+function retry (){
     const secondTry = document.getElementById ('font-page');
     secondTry.style.display = 'block';
+    secondTry.style.display = 'flex';
     document.getElementById ('verify').style.display = 'none';
     const pin = document.getElementById('pin');
     pin.value = '';
     const typedPin= document.getElementById ('typed-pin');
     typedPin.value = '';
-});
+};
